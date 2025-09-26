@@ -1,8 +1,20 @@
 # SSW 567
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/R1TE5H/SSW_567/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/R1TE5H/SSW_567/tree/main)
+
 This is my repository for SSW 567 -- Quality Assurance and Maintenance
+
+## Setup
+
+To use the GitHub API functionality, you'll need to set up a GitHub Personal Access Token:
+
+1. Copy `.env.example` to `.env`
+2. Replace `your_github_token_here` with your actual GitHub token
+3. The token will be loaded automatically when running the scripts
+
+## Running Tests
 
 To run tests, enter:
 ```bash
-/Users/riteshpersaud/Desktop/SSW/SSW_567/.venv/bin/python -m pytest [PATH TO FILE OR DIR] -v -s
+/Users/riteshpersaud/Desktop/SSW/567_code/.venv/bin/python -m pytest [PATH TO FILE OR DIR] -v -s
 ```
