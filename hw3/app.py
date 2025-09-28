@@ -1,5 +1,9 @@
 import requests
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Run File: source .venv/bin/activate && python hw3/github.py
 
