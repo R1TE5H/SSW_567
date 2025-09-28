@@ -5,10 +5,12 @@ from hw3.app import (
     fetch_repo_commits,
     print_repo_commits,
 )
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Add the parent directory to the path so we can import the hw3 module
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-
 
 github_user = "https://api.github.com/users/R1TE5H/repos"
 commits_url = (
