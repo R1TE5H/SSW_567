@@ -19,28 +19,16 @@ auth = os.getenv("GITHUB_TOKEN", "")
 
 def test_fetch_github_data_exists():
     """Test that fetch_github_data function returns actual repository data"""
-    # Debug: Check token status
-    print(f"DEBUG: Token exists: {bool(auth)}")
-    print(f"DEBUG: Token length: {len(auth) if auth else 0}")
-    if auth:
-        print(f"DEBUG: Token starts: {auth[:4]}...")
-        print(f"DEBUG: Token ends: ...{auth[-4:]}")
 
     result = fetch_github_data(github_user, auth)
-    assert result is not None, "GitHub API should return repository data"
+    assert result, "GitHub API should return repository data"
 
 
 def test_fetch_repo_commits_exists():
     """Test that fetch_repo_commits function returns actual commit data"""
-    # Debug: Check token status
-    print(f"DEBUG: Token exists: {bool(auth)}")
-    print(f"DEBUG: Token length: {len(auth) if auth else 0}")
-    if auth:
-        print(f"DEBUG: Token starts: {auth[:4]}...")
-        print(f"DEBUG: Token ends: ...{auth[-4:]}")
 
     result = fetch_repo_commits(commits_url, auth)
-    assert result is not None, "GitHub API should return commit data"
+    assert result, "GitHub API should return commit data"
 
 
 def test_fetch_github_data_with_invalid_url():
