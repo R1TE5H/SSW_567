@@ -17,13 +17,21 @@ commits_url = (
 
 
 def test_fetch_github_data_exists():
-    """Test that fetch_github_data function exists and returns a value"""
-    assert fetch_github_data(github_user) is not None
+    """Test that fetch_github_data function returns actual repository data"""
+    result = fetch_github_data(github_user)
+    # Should return a list of repositories, not None
+    assert result is not None, "GitHub API should return repository data"
+    assert isinstance(result, list), "Result should be a list of repositories"
+    assert len(result) > 0, "Should return at least one repository"
 
 
 def test_fetch_repo_commits_exists():
-    """Test that fetch_repo_commits function exists and returns a value"""
-    assert fetch_repo_commits(commits_url) is not None
+    """Test that fetch_repo_commits function returns actual commit data"""
+    result = fetch_repo_commits(commits_url)
+    # Should return a list of commits, not None
+    assert result is not None, "GitHub API should return commit data"
+    assert isinstance(result, list), "Result should be a list of commits"
+    assert len(result) > 0, "Should return at least one commit"
 
 
 def test_fetch_github_data_with_invalid_url():

@@ -33,12 +33,16 @@ jobs:
           command: |
             . venv/bin/activate
             python -m pytest tests/ -v -s
+          environment:
+            GITHUB_TOKEN: $GITHUB_TOKEN
       
       - run:
           name: Run hw3 github module (optional - requires GITHUB_TOKEN)
           command: |
             . venv/bin/activate
-            python hw3/github.py || echo "Skipping GitHub API calls - no token provided"
+            python hw3/app.py || echo "Skipping GitHub API calls - no token provided"
+          environment:
+            GITHUB_TOKEN: $GITHUB_TOKEN
 
 workflows:
   version: 2
