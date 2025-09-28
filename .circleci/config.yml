@@ -29,6 +29,18 @@ jobs:
           key: v1-dependencies-{{ checksum "requirements.txt" }}
       
       - run:
+          name: Debug environment variables
+          command: |
+            echo "Checking if GITHUB_TOKEN is available..."
+            if [ -z "$GITHUB_TOKEN" ]; then
+              echo "ERROR: GITHUB_TOKEN environment variable is not set!"
+            else
+              echo "SUCCESS: GITHUB_TOKEN is available (length: ${#GITHUB_TOKEN})"
+            fi
+          environment:
+            GITHUB_TOKEN: $GITHUB_TOKEN
+      
+      - run:
           name: Run tests
           command: |
             . venv/bin/activate
