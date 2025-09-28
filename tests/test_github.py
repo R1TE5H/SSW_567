@@ -28,6 +28,7 @@ def test_fetch_github_data_exists():
 def test_fetch_repo_commits_exists():
     """Test that fetch_repo_commits function returns actual commit data"""
     result = fetch_repo_commits(commits_url)
+    print(result)
     # Should return a list of commits, not None
     assert result is not None, "GitHub API should return commit data"
     assert isinstance(result, list), "Result should be a list of commits"
@@ -37,6 +38,7 @@ def test_fetch_repo_commits_exists():
 def test_fetch_github_data_with_invalid_url():
     """Test fetch_github_data with invalid URL returns None"""
     result = fetch_github_data("invalid-url")
+    print(result)
     assert result is None
 
 
