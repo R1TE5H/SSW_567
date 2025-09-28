@@ -25,7 +25,7 @@ def test_fetch_github_data_exists():
     if auth:
         print(f"DEBUG: Token starts: {auth[:4]}...")
         print(f"DEBUG: Token ends: ...{auth[-4:]}")
-    
+
     result = fetch_github_data(github_user, auth)
     assert result is not None, "GitHub API should return repository data"
 
@@ -38,7 +38,7 @@ def test_fetch_repo_commits_exists():
     if auth:
         print(f"DEBUG: Token starts: {auth[:4]}...")
         print(f"DEBUG: Token ends: ...{auth[-4:]}")
-    
+
     result = fetch_repo_commits(commits_url, auth)
     assert result is not None, "GitHub API should return commit data"
 
