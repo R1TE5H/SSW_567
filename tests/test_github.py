@@ -15,10 +15,12 @@ commits_url = (
     "https://api.github.com/repos/R1TE5H/Data_Structures-Algorithms/commits"
 )
 
+auth = os.getenv("GITHUB_TOKEN", "")
+
 
 def test_fetch_github_data_exists():
     """Test that fetch_github_data function returns actual repository data"""
-    result = fetch_github_data(github_user)
+    result = fetch_github_data(github_user, auth)
     # Should return a list of repositories, not None
     assert result is not None, "GitHub API should return repository data"
     assert isinstance(result, list), "Result should be a list of repositories"
@@ -27,8 +29,7 @@ def test_fetch_github_data_exists():
 
 def test_fetch_repo_commits_exists():
     """Test that fetch_repo_commits function returns actual commit data"""
-    result = fetch_repo_commits(commits_url)
-    print(result)
+    result = fetch_repo_commits(commits_url, auth)
     # Should return a list of commits, not None
     assert result is not None, "GitHub API should return commit data"
     assert isinstance(result, list), "Result should be a list of commits"
@@ -37,14 +38,14 @@ def test_fetch_repo_commits_exists():
 
 def test_fetch_github_data_with_invalid_url():
     """Test fetch_github_data with invalid URL returns None"""
-    result = fetch_github_data("invalid-url")
+    result = fetch_github_data("invalid-url", auth)
     print(result)
     assert result is None
 
 
 def test_fetch_repo_commits_with_invalid_url():
     """Test fetch_repo_commits with invalid URL returns None"""
-    result = fetch_repo_commits("invalid-url")
+    result = fetch_repo_commits("invalid-url", auth)
     assert result is None
 
 
