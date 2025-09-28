@@ -1,6 +1,6 @@
 # SSW 567
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/R1TE5H/SSW_567/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/R1TE5H/SSW_567/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/R1TE5H/SSW_567/tree/HW04c_Mocking.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/R1TE5H/SSW_567/tree/HW04c_Mocking)
 
 This is my repository for SSW 567 -- Quality Assurance and Maintenance
 
